@@ -1,129 +1,134 @@
 # HR-ANALYTICS-PROJECT
 
-# Introduction and Context:
-The project is focused on analyzing employee survey data to gain insights into their work environment, job satisfaction, performance, and more. The dataset includes a range of employee details such as:
+# HR Analytics Project: Employee Survey and Performance Analysis
 
-Employee ID, Age, Location, Job Role
-Work-Life Balance, Promotions, Work Experience
+# Project Overview
+This project involves analyzing employee survey data to extract meaningful insights into work culture, job satisfaction, performance, and other factors. The analysis is performed using SQL for querying and summarizing data, and various machine learning models to predict and classify employee performance. Visualization of key findings is done using Power BI.
 
-This data forms the basis for understanding the work culture, and influences that impact employees' job satisfaction and performance.
-The project involved analyzing an employee survey dataset containing various features, such as employee demographics (age, gender, job role, work experience), job satisfaction levels, promotions, work-life balance, and performance ratings. The goal was to extract valuable insights using both data querying techniques in SQL and advanced machine learning algorithms. Power BI was used to create a dashboard for summarizing the data visually, making insights easier to understand and act upon.
+Table of Contents
+Objective
+Technologies Used
+Data Analysis and Preprocessing
+Machine Learning Models
+Power BI Visualization
+Conclusion
 
-# Project Objective:
-The key goal is to extract meaningful insights from this survey data by:
+# Objective
+The main objective of this project is to query and analyze employee data to gain a deeper understanding of work culture, job satisfaction, performance, and other influential factors. Key goals include:
 
-# Data Analysis and SQL Queries:
+Analyzing patterns in employee data using SQL queries.
+Predicting employee performance using machine learning models.
+Visualizing insights and trends through Power BI dashboards.
 
-# To analyze the dataset, SQL was used extensively:
+# Technologies Used
 
-# Counting Records: 
-The total number of records was counted using SELECT COUNT(*) FROM train.
+# SQL:
+For querying, aggregation, and summarizing employee data.
+
+# Machine Learning: 
+Multiple models (Logistic Regression, Decision Tree, Random Forest, Naive Bayes, KNN) were used to predict and classify employee performance.
+
+# Python Libraries:
+Pandas: For data manipulation.
+Numpy: For numerical operations.
+Seaborn & Matplotlib: For data visualization during exploratory data analysis (EDA).
+Scikit-learn: For building and evaluating machine learning models.
+
+# Power BI: 
+To create dashboards that summarize key insights from the dataset.
+
+# Data Analysis and Preprocessing
+
+# SQL Queries:
+
+# Total Record Count: 
+Queried the total number of employees.
 # Gender Distribution:
-The distribution of employees by gender was analyzed using SELECT gender, COUNT(Employee_ID) FROM train GROUP BY gender.
-# Promotion and Tenure Analysis:
-Employees were ranked based on tenure and promotions to identify top performers.
-# Salary Analysis: 
-SQL queries were used to find employees with the second-highest salary in each department. These queries helped identify key trends such as gender distribution, promotion rates, and salary variations across departments.
+Aggregated gender-wise counts of employees.
+# Salary Distribution: 
+Identified the second-highest salary in each department.
+# Promotion and Tenure: 
+Ranked employees based on tenure and promotion data.
 
-# Data Preprocessing:
+# Preprocessing Steps:
 
-# Handling Missing Data: 
-Missing values were replaced using the mean (for numerical variables) and median (for categorical variables).
-# Outliers Detection:
-Outliers were identified using Interquartile Range (IQR). Outliers in the dataset were managed by calculating the upper and lower limits of data variability.
-# One-Hot Encoding for Categorical Variables: 
-Categorical variables (such as job role, location, etc.) were converted into a binary format for better use in machine learning algorithms.
-# Machine Learning Models Applied:
-Multiple supervised learning models were used to classify and predict employee performance, job satisfaction, and other outcomes.
+# Handling Missing Values: 
+Replaced missing data using mean (for numerical variables) and median (for categorical variables).
+
+# Outlier Detection: 
+Outliers were identified using the Interquartile Range (IQR) method.
+
+# One-Hot Encoding: 
+Converted categorical variables to binary format for machine learning models.
+
+# Exploratory Data Analysis (EDA):
+Checked for missing values and outliers.
+Correlation analysis to identify relationships between variables.
+Used box plots to visualize the spread of data and detect outliers.
+
+# Machine Learning Models
+The following machine learning models were applied to classify and predict employee performance:
 
 # Logistic Regression:
 
 Training Accuracy: 79%
 Testing Accuracy: 80%
-Logistic regression was used for classification, particularly because the problem involved predicting categorical variables (e.g., job satisfaction).
+Best suited for linear relationships in the dataset.
 
-# Decision Tree Classifier:
+# Decision Tree:
 
 Training Accuracy: 99%
 Testing Accuracy: 66%
-The Decision Tree classifier was used for classification tasks but showed signs of overfitting, which caused a significant drop in testing accuracy.
+Overfitting was a major issue, resulting in poor testing performance.
 
-# Random Forest Classifier:
+# Random Forest:
 
 Training Accuracy: 99%
 Testing Accuracy: 77%
-This model combines multiple decision trees, improving performance but requiring further optimization for better testing results.
+A more robust model that can handle overfitting better than a decision tree.
 
 # K-Nearest Neighbor (KNN):
 
 Training Accuracy: 84%
 Testing Accuracy: 74%
-KNN was used due to its simplicity but did not outperform other models, suggesting that further tuning or preprocessing could improve results.
+Simple but slightly underperformed compared to Logistic Regression and Naive Bayes.
 
 # Naive Bayes:
 
-Gaussian NB, Multinomial NB, Bernoulli NB were applied:
 Training Accuracy: 79%
 Testing Accuracy: 80%
-Naive Bayes performed well in terms of accuracy and simplicity, making it a viable model for prediction in this context.
+A fast and efficient model for handling categorical data with assumptions of independence.
 
-# Correlation Analysis:
+# Power BI Visualization
 
-# Correlation Matrix: 
-The analysis identified correlations between different variables (e.g., performance status, job satisfaction, work-life balance, income).
-# Heatmap Visualization:
-A heatmap was generated to visualize how various factors correlated with employee performance, helping the team identify strong relationships between variables.
-
-# Comparison of Machine Learning Models:
-
-Based on accuracy comparisons, Logistic Regression and Naive Bayes performed best with 80% accuracy, showing their potential in solving the problem at hand, especially where the relationships were linear or feature independence was important.
-Random Forest showed good performance but did not significantly outperform simpler models.
-Decision Tree and KNN underperformed, with the Decision Tree model being particularly affected by overfitting.
-
-# Power BI Dashboard Insights:
-The team developed a Power BI dashboard to visually summarize the results of the analysis:
+A Power BI dashboard was created to visualize key metrics from the analysis:
 
 # Job Satisfaction:
-Employee satisfaction was analyzed, revealing that 29,716 employees had the highest count of job satisfaction.
-Satisfaction was positively correlated with performance ratings, showing that higher satisfaction levels led to better performance.
+Count and satisfaction levels were visualized across job roles.
+# Work-Life Balance: 
+Explored its relationship with years at the company and performance.
+# Monthly Income 
+Trends: Analyzed income distribution based on job roles and performance.
 
-# Work-Life Balance and Years at Company:
-Employees with a “Good” work-life balance had the highest sum of years at the company, indicating that those with a balanced work-life tend to stay longer.
+# Key findings:
 
-# Monthly Income and Job Roles:
-Income distribution was categorized by job roles, and it was found that employees with lower recognition still had a high percentage of total income, while those with "low" job satisfaction had the highest total monthly income, indicating discrepancies between income and recognition.
+There is a positive correlation between job satisfaction and performance ratings.
+Employees with a balanced work-life tend to stay longer at the company.
+The highest total monthly income was associated with employees who received low recognition, pointing to discrepancies between performance and recognition.
 
-# Detailed Conclusion:
+# Conclusion
+The project concluded that Logistic Regression and Naive Bayes were the most effective models for predicting employee performance, with accuracy rates of 80%. The Random Forest model showed promise but needs further hyperparameter tuning. Models like Decision Tree and KNN underperformed, suggesting overfitting and insufficient tuning.
 
-# Best Performing Models:
+Logistic Regression and Naive Bayes are recommended due to their simplicity and efficiency in handling this data.
+Power BI provided crucial insights that can help human resources make informed decisions about employee satisfaction and performance trends.
 
-Logistic Regression and Naive Bayes emerged as the best-performing models, particularly useful for handling this type of employee data where relationships are linear.
 
-# Potential for Random Forest:
+This README serves as an overview of the key components of the HR Analytics Project and can guide anyone interested in understanding the project workflow, methodologies, and conclusions.
 
-While Random Forest did not perform as well as expected, further hyperparameter tuning could enhance its performance. However, its complexity suggests that it may not offer significant gains over simpler models like Logistic Regression and Naive Bayes.
 
-# Challenges with Decision Tree and KNN:
 
-The Decision Tree model's significant drop in testing accuracy indicates overfitting, likely due to the model being too complex for the dataset.
-KNN also did not perform as well, indicating that while it can be useful for classification problems, it may not be suited for this particular dataset without further tuning.
 
-# Recommendations:
 
-# Focus on Simpler Models: 
-Given the results, simpler models like Logistic Regression and Naive Bayes are preferable due to their high accuracy and faster processing times.
 
-# Further Optimization:
-Models like Random Forest could be further explored with hyperparameter tuning to assess if significant gains can be made.
 
-# Addressing Overfitting: 
-Preprocessing techniques to address overfitting in models like Decision Tree could be explored to improve generalization.
 
-# Visualization: 
-Power BI dashboards were crucial in conveying key insights, and continued use of such tools can help in real-time monitoring and decision-making regarding employee performance.
-This project provided critical insights into employee behavior, satisfaction, and performance, which can be used to guide human resource decisions and organizational improvements.
-
-# Conclusion:
-The project successfully used machine learning and SQL to derive meaningful insights from the employee survey dataset. Logistic Regression and Naive Bayes proved to be the best models for predicting outcomes related to job satisfaction and performance, with Random Forest offering potential if further tuned. The insights generated through SQL queries and Power BI visualization helped highlight key factors like gender distribution, salary trends, and work-life balance impacts, which can inform decision-making in human resource management.
-
-This comprehensive approach combined data-driven analysis with visual storytelling to provide a clear understanding of employee dynamics in the workplace.
